@@ -2,11 +2,14 @@
 @use "../scss/util/" as u;
 main {
   min-height: 100vh;
-  padding: 2rem 3rem 6rem;
+  padding-bottom: 3rem;
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 3rem;
+    width: min(100% - 3rem, 75rem);
+    margin-inline: auto;
     .logo-cont {
       width: 15%;
     }
@@ -27,6 +30,8 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: min(100%, 75rem);
+    margin-inline: auto;
     h1 {
       @include u.ff-heading($font-size: 2.2rem);
     }
@@ -39,15 +44,7 @@ main {
       text-align: center;
     }
     .get-started-btn {
-      border: none;
-      @include u.ff-body($font-size: 1.2rem);
-      border-radius: 30px;
-      outline: none;
-      padding: 18px 70px;
-      background-color: var(--Pink);
-      box-shadow: 2px 2px 5px rgba(58, 56, 56, 0.185);
-      color: var(--White);
-      margin-top: 2rem;
+      @include u.btn;
     }
     .get-started-btn:hover {
       background-color: var(--LightPink);
@@ -70,5 +67,54 @@ main {
         color: var(--DarkCyan);
       }
     }
+  }
+  .cards-section {
+    margin-top: 3rem;
+    .card-content-wrapper {
+      background-color: var(--PaleBlue);
+      .card-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0;
+        width: min(100% - 3rem, 75rem);
+        margin-inline: auto;
+        .card-text-cont {
+          width: 40%;
+          .card-text {
+            @include u.ff-heading($font-size: 2rem);
+            padding-bottom: 1rem;
+          }
+          .card-copy {
+            @include u.ff-body(1rem);
+            line-height: 1.5rem;
+          }
+        }
+        .card-img-cont {
+          width: 50%;
+        }
+      }
+    }
+    .card-2 {
+      padding: 3rem 0;
+    }
+    .get-started-section {
+      margin-top: 3rem;
+      .get-started-copy {
+        width: min(100% - 3rem, 75rem);
+        text-align: center;
+        margin-inline: auto;
+        .get-started-heading {
+          @include u.ff-heading(1.7rem);
+        }
+        .get-started-btn {
+          @include u.btn();
+        }
+      }
+    }
+  }
+  footer{
+    margin-top: 3rem;
+    
   }
 }
