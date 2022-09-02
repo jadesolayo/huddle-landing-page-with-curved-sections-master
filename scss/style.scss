@@ -2,15 +2,15 @@
 @use "../scss/util/" as u;
 main {
   min-height: 100vh;
-  padding-bottom: 3rem;
+  overflow-x: hidden;
   header {
+    margin-top: 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 3rem;
-    width: min(100% - 3rem, 75rem);
+    width: min(100% - 4rem, 75rem);
     margin-inline: auto;
-    .logo-cont {
+    .header-logo-cont {
       width: 15%;
     }
     .header-btn {
@@ -19,6 +19,7 @@ main {
       outline: none;
       padding: 7px 25px;
       border-radius: 2rem;
+      color: var(--Pink);
       @include u.ff-body($font-size: 0.9rem);
     }
     .header-btn:hover {
@@ -43,6 +44,7 @@ main {
       margin-inline: auto;
       text-align: center;
     }
+  
     .get-started-btn {
       @include u.btn;
     }
@@ -70,14 +72,21 @@ main {
   }
   .cards-section {
     margin-top: 3rem;
+    .card-1::before {
+      content: url(/images/bg-section-top-desktop-1.svg);
+    }
+    .card-1::after {
+      content: url(/images/bg-section-bottom-desktop-1.svg);
+    }
+
     .card-content-wrapper {
       background-color: var(--PaleBlue);
       .card-content {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 1rem 0;
-        width: min(100% - 3rem, 75rem);
+        margin: -0.5rem 0;
+        width: min(100% - 4rem, 75rem);
         margin-inline: auto;
         .card-text-cont {
           width: 40%;
@@ -98,10 +107,19 @@ main {
     .card-2 {
       padding: 3rem 0;
     }
-    .get-started-section {
+    .card-3 {
       margin-top: 3rem;
+    }
+    .card-3::before {
+      content: url(/images/bg-section-top-desktop-2.svg);
+    }
+    .card-3::after {
+      content: url(/images/bg-section-bottom-desktop-2.svg);
+    }
+    .get-started-section {
+      margin-top: 4rem;
       .get-started-copy {
-        width: min(100% - 3rem, 75rem);
+        width: min(100% - 4rem, 75rem);
         text-align: center;
         margin-inline: auto;
         .get-started-heading {
@@ -113,8 +131,97 @@ main {
       }
     }
   }
-  footer{
-    margin-top: 3rem;
-    
+  footer::before {
+    content: url(/images/bg-footer-top-desktop.svg);
+    position: absolute;
+    max-width: 100%;
+    margin-top: -9.9rem;
+  }
+  footer {
+    position: relative;
+    margin-top: 15rem;
+    color: var(--White);
+    .footer-content-wrapper {
+      background-color: var(--DarkCyan);
+      padding-bottom: 5rem;
+      .footer-content {
+        width: min(100% - 4rem, 75rem);
+        margin-inline: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .footer-content-left {
+          width: 30%;
+          #footer-logo {
+            width: 50%;
+            margin: 1rem 0 1.5rem 0;
+          }
+          .location-copy {
+            @include u.ff-body($font-size: 1rem);
+            line-height: 1.5rem;
+          }
+          .phone-wrapper {
+            display: flex;
+            margin-top: 1.5rem;
+
+            #phone-copy {
+              @include u.ff-body($font-size: 1rem);
+              padding-left: 1rem;
+            }
+          }
+          .email-wrapper {
+            display: flex;
+            margin-top: 1.5rem;
+
+            #email-copy {
+              @include u.ff-body($font-size: 1rem);
+              padding-left: 1rem;
+            }
+          }
+        }
+        .footer-content-right {
+          width: 50%;
+          .news-letter-wrapper {
+            margin-right: 15rem;
+            #newsletter {
+              text-transform: uppercase;
+              @include u.ff-body($font-size: 1.5rem);
+              font-weight: 600;
+            }
+            #newsletter-copy {
+              padding-top: 1rem;
+              @include u.ff-body($font-size: 1rem);
+              line-height: 1.5rem;
+            }
+          }
+          .email-box-wrapper {
+            padding-top: 1.5rem;
+            justify-self: flex-end;
+            input[type="email"] {
+              padding: 0.7rem;
+              border: none;
+              outline: none;
+              width: 57%;
+              border-radius: 5px;
+            }
+            #subscribe-btn {
+              padding: 0.5rem 1rem;
+              border-radius: 5px;
+              border: none;
+              outline: none;
+              cursor: pointer;
+              margin-left: 1.5rem;
+              background-color: var(--Pink);
+              @include u.ff-body($font-size: 0.9rem);
+              color: var(--White);
+            }
+            #subscribe-btn:hover {
+              background: var(--LightPink);
+              transition: 0.5s ease-in;
+            }
+          }
+        }
+      }
+    }
   }
 }

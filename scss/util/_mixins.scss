@@ -8,17 +8,17 @@
   font-family: "Open Sans", sans-serif;
   font-size: $font-size;
   font-weight: 400;
-  color: var(--DarkCyan);
 }
 @mixin btn() {
   border: none;
-  @include ff-body($font-size: 1.2rem);
+  @include ff-body($font-size: 1rem);
   border-radius: 30px;
   outline: none;
-  padding: 15px 65px;
+  padding: 10px 50px;
   background-color: var(--Pink);
   box-shadow: 2px 2px 5px rgba(58, 56, 56, 0.185);
   color: var(--White);
   margin-top: 2rem;
   cursor: pointer;
 }
+
