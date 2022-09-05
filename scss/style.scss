@@ -10,8 +10,16 @@ main {
     align-items: center;
     width: min(100% - 4rem, 75rem);
     margin-inline: auto;
+    @media (max-width: 700px) {
+      margin-top: 1.5rem;
+    }
+
     .header-logo-cont {
       width: 15%;
+      @media (max-width: 700px) {
+        width: 30%;
+        height: auto;
+      }
     }
     .header-btn {
       background-color: var(--White);
@@ -21,6 +29,11 @@ main {
       border-radius: 2rem;
       color: var(--Pink);
       @include u.ff-body($font-size: 0.9rem);
+
+      @media (max-width: 700px) {
+        padding: 5px 13px;
+        @include u.ff-body($font-size: 0.8rem);
+      }
     }
     .header-btn:hover {
       border: 2px solid var(--LightPink);
@@ -31,10 +44,21 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: min(100%, 75rem);
+    width: min(100% - 2rem, 75rem);
     margin-inline: auto;
+
+    @media (max-width: 700px) {
+      margin-top: 6rem;
+    }
+
     h1 {
       @include u.ff-heading($font-size: 2.2rem);
+      @media (max-width: 700px) {
+        text-align: center;
+        width: 90%;
+        @include u.ff-heading($font-size: 1.5rem);
+        margin-inline: inherit;
+      }
     }
     .landing-page-copy {
       padding-top: 1.5rem;
@@ -43,10 +67,17 @@ main {
       line-height: 1.5rem;
       margin-inline: auto;
       text-align: center;
+      @media (max-width: 700px) {
+        @include u.ff-body($font-size: 0.92rem);
+        width: 90%;
+      }
     }
-  
+
     .get-started-btn {
-      @include u.btn;
+      @include u.btn-desktop();
+      @media (max-width: 700px) {
+        @include u.btn-mobile();
+      }
     }
     .get-started-btn:hover {
       background-color: var(--LightPink);
@@ -54,6 +85,10 @@ main {
     .illustration-wrapper {
       width: 60%;
       padding-top: 4rem;
+      @media (max-width: 700px) {
+        width: 100%;
+        padding-top: 6rem;
+      }
     }
     .statistics-wrapper {
       display: flex;
@@ -61,6 +96,10 @@ main {
       width: 50%;
       text-align: center;
       padding-top: 6rem;
+            @media (max-width: 700px) {
+              flex-direction: column;
+            }
+
       .stats-h1 {
         @include u.ff-heading($font-size: 3.5rem);
       }
@@ -126,7 +165,7 @@ main {
           @include u.ff-heading(1.7rem);
         }
         .get-started-btn {
-          @include u.btn();
+          @include u.btn-desktop();
         }
       }
     }

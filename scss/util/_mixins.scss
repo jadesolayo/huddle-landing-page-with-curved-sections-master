@@ -9,7 +9,7 @@
   font-size: $font-size;
   font-weight: 400;
 }
-@mixin btn() {
+@mixin btn-desktop() {
   border: none;
   @include ff-body($font-size: 1rem);
   border-radius: 30px;
@@ -21,4 +21,15 @@
   margin-top: 2rem;
   cursor: pointer;
 }
-
+@mixin btn-mobile() {
+  border: none;
+  @include ff-body($font-size: 1rem);
+  border-radius: 30px;
+  outline: none;
+  padding: 10px 30px;
+  background-color: var(--Pink);
+  box-shadow: 2px 2px 5px rgba(58, 56, 56, 0.185);
+  color: var(--White);
+  margin-top: 2rem;
+  cursor: pointer;
+}
