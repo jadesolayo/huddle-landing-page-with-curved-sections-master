@@ -25,3 +25,11 @@ a:active {
 a:hover{
     cursor: pointer;
 }
+i{
+  display: block;
+  font-size: 1.5rem;
+}
+i:hover{
+  color: var(--icon-color);
+  transition: 2s ease in;
+}

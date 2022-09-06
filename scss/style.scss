@@ -68,7 +68,7 @@ main {
       margin-inline: auto;
       text-align: center;
       @media (max-width: 700px) {
-        @include u.ff-body($font-size: 0.92rem);
+        @include u.ff-body($font-size: 0.96rem);
         width: 90%;
       }
     }
@@ -133,20 +133,19 @@ main {
     margin-top: 3rem;
     .card-1::before {
       content: url(/images/bg-section-top-desktop-1.svg);
-      @media (max-width: 700px) {
+      @media (max-width: 375px) {
         content: url(/images/bg-section-top-mobile-1.svg);
-
       }
     }
     .card-1::after {
       content: url(/images/bg-section-bottom-desktop-1.svg);
-      @media (max-width: 700px) {
-        content: url(/images/bg-section-bottom-mobile-1.svg);   
+      @media (max-width: 375px) {
+        content: url(/images/bg-section-bottom-mobile-1.svg);
       }
     }
 
     .card-content-wrapper {
-      // background-color: var(--PaleBlue);
+      background-color: var(--PaleBlue);
       .card-content {
         display: flex;
         align-items: center;
@@ -154,22 +153,43 @@ main {
         margin: -0.5rem 0;
         width: min(100% - 4rem, 75rem);
         margin-inline: auto;
-        // @media (max-width: 700px) {
-        //   width: 100%; 
-        // }
+        @media (max-width: 700px) {
+          flex-direction: column;
+        }
         .card-text-cont {
           width: 40%;
-          .card-text {
+          @media (max-width: 700px) {
+            width: 100%;
+            margin-inline: auto;
+            text-align: center;
+            padding: 6rem 0;
+          }
+
+          .card-heading {
             @include u.ff-heading($font-size: 2rem);
             padding-bottom: 1rem;
+            @media (max-width: 700px) {
+              @include u.ff-heading($font-size: 1.5rem);
+            }
           }
           .card-copy {
             @include u.ff-body(1rem);
             line-height: 1.5rem;
+            @media (max-width: 700px) {
+              width: 95%;
+              text-align: center;
+              margin-inline: auto;
+              @include u.ff-body(0.96rem);
+            }
           }
         }
         .card-img-cont {
+          order: -1;
           width: 50%;
+          @media (max-width: 700px) {
+            width: 100%;
+            padding-top: 6rem;
+          }
         }
       }
     }
@@ -181,9 +201,15 @@ main {
     }
     .card-3::before {
       content: url(/images/bg-section-top-desktop-2.svg);
+      @media (max-width: 375px) {
+        content: url(/images/bg-section-top-mobile-1.svg);
+      }
     }
     .card-3::after {
       content: url(/images/bg-section-bottom-desktop-2.svg);
+      @media (max-width: 375px) {
+        content: url(/images/bg-section-bottom-mobile-1.svg);
+      }
     }
     .get-started-section {
       margin-top: 4rem;
@@ -196,6 +222,9 @@ main {
         }
         .get-started-btn {
           @include u.btn-desktop();
+          @media (max-width: 700px) {
+            @include u.btn-mobile();
+          }
         }
       }
     }
@@ -205,6 +234,10 @@ main {
     position: absolute;
     max-width: 100%;
     margin-top: -9.9rem;
+    @media (max-width: 375px) {
+      content: url(/images/bg-footer-top-mobile.svg);
+      margin-top: -3.3rem;
+    }
   }
   footer {
     position: relative;
@@ -219,15 +252,29 @@ main {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media (max-width: 700px) {
+          flex-direction: column;
+        }
         .footer-content-left {
           width: 30%;
+          @media (max-width: 700px) {
+            width: 100%;
+            margin-top: 6rem;
+          }
+
           #footer-logo {
             width: 50%;
             margin: 1rem 0 1.5rem 0;
+            @media (max-width: 700px) {
+              width: 60%;
+            }
           }
           .location-copy {
             @include u.ff-body($font-size: 1rem);
             line-height: 1.5rem;
+            @media (max-width: 700px) {
+              padding-bottom: 2rem;
+            }
           }
           .phone-wrapper {
             display: flex;
@@ -247,31 +294,62 @@ main {
               padding-left: 1rem;
             }
           }
+          .footer-icons{
+            margin-top: 4rem;
+            .fa-instagram, .fa-square-twitter{
+                padding-left: 1rem;
+            }
+
+          }
         }
         .footer-content-right {
           width: 50%;
+          @media (max-width: 700px) {
+            order: -1;
+            padding-top: 6rem;
+            width: 100%;
+          }
           .news-letter-wrapper {
             margin-right: 15rem;
+            @media (max-width: 700px) {
+              margin-right: 0;
+            }
             #newsletter {
               text-transform: uppercase;
               @include u.ff-body($font-size: 1.5rem);
               font-weight: 600;
+              @media (max-width: 700px) {
+                @include u.ff-body($font-size: 1.4rem);
+              }
             }
             #newsletter-copy {
               padding-top: 1rem;
               @include u.ff-body($font-size: 1rem);
               line-height: 1.5rem;
+              @media (max-width: 700px) {
+                @include u.ff-body($font-size: 0.96rem);
+              }
             }
           }
           .email-box-wrapper {
             padding-top: 1.5rem;
             justify-self: flex-end;
+            @media (max-width: 700px) {
+              form {
+                display: flex;
+                flex-direction: column;
+              }
+            }
+
             input[type="email"] {
               padding: 0.7rem;
               border: none;
               outline: none;
               width: 57%;
               border-radius: 5px;
+              @media (max-width: 700px) {
+                width: 100%;
+              }
             }
             #subscribe-btn {
               padding: 0.5rem 1rem;
@@ -281,8 +359,14 @@ main {
               cursor: pointer;
               margin-left: 1.5rem;
               background-color: var(--Pink);
-              @include u.ff-body($font-size: 0.9rem);
+              @include u.ff-body($font-size: 1.02rem);
               color: var(--White);
+              @media (max-width: 700px) {
+                width: 50%;
+                padding: 0.8rem 1.2rem;
+                margin-top: 1rem;
+                align-self: flex-end;
+              }
             }
             #subscribe-btn:hover {
               background: var(--LightPink);
