@@ -18,12 +18,13 @@ a,
 a:visited,
 a:active {
   text-decoration: none;
-  display: block;
   padding-top: 1rem;
-  color: var(--White);
+  color: var(--Pink);
 }
 a:hover{
     cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: var(--White);
 }
 i{
   display: block;

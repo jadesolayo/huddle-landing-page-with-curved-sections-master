@@ -294,13 +294,6 @@ main {
               padding-left: 1rem;
             }
           }
-          .footer-icons{
-            margin-top: 4rem;
-            .fa-instagram, .fa-square-twitter{
-                padding-left: 1rem;
-            }
-
-          }
         }
         .footer-content-right {
           width: 50%;
@@ -316,10 +309,10 @@ main {
             }
             #newsletter {
               text-transform: uppercase;
-              @include u.ff-body($font-size: 1.5rem);
+              @include u.ff-body($font-size: 1.7rem);
               font-weight: 600;
               @media (max-width: 700px) {
-                @include u.ff-body($font-size: 1.4rem);
+                @include u.ff-body($font-size: 1.5rem);
               }
             }
             #newsletter-copy {
@@ -373,6 +366,29 @@ main {
               transition: 0.5s ease-in;
             }
           }
+        }
+      }
+    }
+    .attribution-wrapper {
+      .footer-icons {
+        .fa-instagram,
+        .fa-square-twitter {
+          padding-left: 1rem;
+        }
+      }
+      display: flex;
+      padding-top: 3rem;
+      justify-content: space-between;
+      @include u.ff-body($font-size: 1rem);
+      margin-inline: auto;
+      width: min(100% - 4rem, 75rem);
+      @media (max-width: 700px) {
+          flex-direction: column;
+          .attribution{
+              align-self: center;
+              text-align: center;
+              padding-top: 2rem;
+              @include u.ff-body($font-size: .96rem);
         }
       }
     }
