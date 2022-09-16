@@ -36,8 +36,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/jadesolayo/huddle-landing-page-with-curved-sections-master)
-- Live Site URL: [Add live site URL here](https://huddle-landing-page-curved-by-jade.netlify.app/)
+- Solution URL: [(https://github.com/jadesolayo/huddle-landing-page-with-curved-sections-master)]
+- Live Site URL: [(https://huddle-landing-page-curved-by-jade.netlify.app/)]
 
 ## My process
  I started with the html layout and then I started adding CSS codes as I went. This layout was achieved easily with CSS Flexbox which in turn also made it easily responsive and adaptive to all screen sizes. I also experimented with SASS a little. I also used a desktop frst in this project.
